@@ -20,13 +20,14 @@
 				document.body.append(this.moneyThing);
 			}
 			playAll() {
+                this.moneys -= 1;
             if (this.moneys - this.slots.length < 0) {
                 this.moneyThing.innerText = 'Game Over';
                 return;
             }
             let total = 0;
             for (let slot of this.slots) {
-                this.moneys -= 1;
+                
                 slot.playGame();
                 this.money += slot.lastAmt;
                 total += slot.lastAmt;
